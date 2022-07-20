@@ -7,13 +7,13 @@ export default function Navigation() {
                 <li>
                     <NavLink to="/">Home</NavLink> 
                     
-                      <Outlet/>
+                     
                 </li>
                
                 <li>
                     <NavLink to="/contacts">Contacts</NavLink>
                 </li>
-            
+             <Outlet/>
             </ul>
         </nav>
 

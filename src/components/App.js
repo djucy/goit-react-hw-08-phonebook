@@ -7,6 +7,7 @@ import Contacts from '../views/Contacts/Contacts';
 import LoginView from '../views/LoginView/LoginView';
 import RegisterView from '../views/RegisterView/RegisterView';
 import AppBar from './AppBar/AppBar';
+import Home from './Home/Home'
 // import Navigation from '../components/Navigation/Navigation';
 
 
@@ -25,7 +26,7 @@ export default function App () {
       
      <AppBar></AppBar>
       <Routes>
-        <Route path="/" >
+        <Route path="/" element={<Home/>} >
           <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
         </Route>
