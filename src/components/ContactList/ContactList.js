@@ -4,9 +4,10 @@ import s from './ContactList.module.css';
 import PropTypes, { arrayOf } from 'prop-types';
 // import { getContact, getFilteredContacts } from '../../redux/contacts/contactsSelector';
 import { contactsOperation, contactsSelector } from '../../redux/contacts';
+import ContactEdit from '../ContactEdit/ContactEdit';
 
 
-const ContactList = ({onClick}) => {
+const ContactList = () => {
  
   const dispatch = useDispatch();
   const completeContactList = useSelector(contactsSelector.getContact);
@@ -20,10 +21,10 @@ const ContactList = ({onClick}) => {
     dispatch(contactsOperation.deleteItems(id));
 
   }
-  const onEditButtonClick = ( name,number,id) => {
-    onClick(name,number,id  )
-    console.log(id)
-  }
+  // const onEditButtonClick = ( name,number,id) => {
+  //   onClick(name,number,id  )
+  //   console.log(id)
+  // }
 
   return (
 
@@ -43,9 +44,7 @@ const ContactList = ({onClick}) => {
             <td className={s.table__date}><button type="button" className={s.button__delete} onClick={(e) => deleteContact(id)}>
               Delete
             </button></td>
-            <td className={s.table__date}><button type="button" className={s.button__delete} onClick={onEditButtonClick}>
-              Edit
-        </button></td>
+            <td className={s.table__date}><ContactEdit id={id} contactName={ name} contactNumber={number} /></td>
 
           </tr>
         ))}

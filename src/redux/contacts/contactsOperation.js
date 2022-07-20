@@ -50,9 +50,10 @@ import * as contactsAPI from '../../services/contacts-api';
 
 const editItems = createAsyncThunk(
     'items/editItems',
-    async (contact,id, { rejectWithValue }) => {
+    async ( {id,name,number},{ rejectWithValue }) => {
+      
         try {
-            const item = await contactsAPI.editContact({...contact, id });
+            const item = await contactsAPI.editContact({id,name,number});
             return item;
         } catch (error) {
          return rejectWithValue(error)   

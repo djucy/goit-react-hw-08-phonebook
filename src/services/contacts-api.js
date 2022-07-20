@@ -18,7 +18,8 @@ export async function deleteContact(id) {
     return id;
 }
 
-export async function editContact(id,contact) {
+export async function editContact({ id, name, number }) {
+    const contact = {name,number}
     const { data} = await axios.patch(`/contacts/${id}`,contact);
     return data;
 }
