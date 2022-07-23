@@ -12,6 +12,7 @@ body {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
     /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif; */
@@ -37,4 +38,9 @@ li{
 a{
 text-decoration: none;
 
+}
+img{
+  width:100%;
+  display: block;
+  height: auto;
 }
