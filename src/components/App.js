@@ -41,7 +41,7 @@ export default function App () {
       <AppBar></AppBar>
            <Routes>
         <Route path="/" element={<PublicRoute><Home/></PublicRoute>}/ >
-        <Route path="/register" element={<PublicRoute restricted><RegisterView /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute  redirectTo={"/contacts"} restricted><RegisterView /></PublicRoute>} />
         <Route path="/login" element={<PublicRoute redirectTo={"/contacts"} restricted><LoginView /></PublicRoute>} />
         <Route path="/contacts" element={<PrivateRoute redirectTo={"/login"}><ContactsView /></PrivateRoute>} />
         <Route path="*" element={<NotFoundView/> }></Route>
