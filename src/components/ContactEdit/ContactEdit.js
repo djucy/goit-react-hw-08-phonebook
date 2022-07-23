@@ -3,7 +3,7 @@ import { useState } from "react";
 import { contactsOperation } from "redux/contacts";
 import { useDispatch } from "react-redux";
 import Modal from '../Modal/Modal'
-import s from '../ContactForm/ContactForm.module.css'
+// import s from '../ContactForm/ContactForm.module.css'
 import style from '../СommonStyle/CommoneStyle.module.css';
 
 
@@ -29,13 +29,13 @@ const onNameInput = e => {
 
   return (
     <>  
-<button type="button" className={s.button__delete} onClick={toggleModal}>
+<button type="button" className={style.button} onClick={toggleModal}>
               Edit
         </button>
       {isModalOpen && (<Modal onClose={toggleModal}>
-        <form onSubmit={onContactEdit} className={s.form}>
-          <label className={style.label}>
-            Name
+        <div className={style.box__formPosition}>
+        <form onSubmit={onContactEdit} >
+          <div className={style.label_position}>
             <input
               className={style.input}
               type="text"
@@ -43,25 +43,37 @@ const onNameInput = e => {
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
-              value={name}
-              onChange={onNameInput}
+            value={name}
+            id="name"
+            onChange={onNameInput}
+            placeholder="name@example.com"
             />
+          <label
+            className={style.label}
+          htmlFor="name">
+            Name
           </label>
-          <label className={style.label}>
-            Number
+          </div>
+          <div className={style.label_position}>
             <input className={style.input}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
-              value={number}
-              onChange={onNumberInput}
+            value={number}
+            id="tel"
+            onChange={onNumberInput}
+            placeholder="name@example.com"
             />
+          <label
+            className={style.label}
+          htmlFor="tel">
+            Number
           </label>
-
-          <button type="submit" className={s.button}>Edit</button>
-        </form>
+</div>
+          <button type="submit" className={style.button}>Edit</button>
+        </form></div>
       </Modal>)}
     </>
       );

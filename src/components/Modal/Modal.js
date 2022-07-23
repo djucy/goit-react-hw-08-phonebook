@@ -31,7 +31,7 @@ const handleBackdropClick = event => {
     return createPortal(
         <div className={style.background} onClick={handleBackdropClick}>
             <div className={style.container}>{children}
-                <h1>Helloo</h1>
+          
             </div>
 
         </div>,

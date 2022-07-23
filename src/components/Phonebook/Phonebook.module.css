@@ -3,18 +3,20 @@ Input__name {
 }
 
 .button {
-  height: 40px;
-  width: 200px;
-  padding: 0 20px;
+display: flex;
+justify-content: center;
+  height: 30px;
+  width: 150px;
+  /* padding: 0 20px; */
 
   margin-left: auto;
   margin-right: auto;
 
-  font-size: 24px;
+  font-size: 17px;
   font-family: 'Dancing Script', cursive;
   font-weight: 500;
   color: #fcfcfa;
-  text-align: center;
+  /* text-align: center; */
 
   background-color: #337bae;
   border-radius: 15px;
@@ -31,4 +33,5 @@ Input__name {
   width: 360 px;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px;
 }

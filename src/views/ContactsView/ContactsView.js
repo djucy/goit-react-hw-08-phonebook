@@ -24,7 +24,7 @@ export default function Contacts() {
   // }
 
     return (
-       <div className={s.container}>
+       <div >
       <div className={s.conatiner__position}>
         <h1 className={s.title}>Phonebook</h1>
         <Phonebook />

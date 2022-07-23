@@ -2,14 +2,39 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    width:100vw;
+  
+    overflow-x: hidden;
+
+    font-family: 'Dancing Script', cursive;
+    background-image: url(/public//telephone.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* background-color: #ffbebd; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul,
+h1,
+h2{
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+a{
+text-decoration: none;
+
 }

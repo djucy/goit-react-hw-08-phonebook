@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { contactsSelector } from '../../redux/contacts';
 import { contactsOperation } from '../../redux/contacts';
-import ContactForm from '../ContactForm/ConstactForm';
+// import ContactForm from '../ContactForm/ConstactForm';
+import s from './Phonebook.module.css';
+import style from '../СommonStyle/CommoneStyle.module.css';
 
 
 export default function Phonebook() {
@@ -46,38 +48,52 @@ export default function Phonebook() {
 
 
   return (
-    <ContactForm onSubmit={onFormSubmit}
-      onNameInput={onNameInput} onNumberInput={onNumberInput}
-    name={name} number={number} text="Add contact"></ContactForm>
-    // <form onSubmit={onFormSubmit} className={s.form}>
-    //   <label className={style.label}>
-    //     Name
-    //       <input
-    //       className={style.input}
-    //       type="text"
-    //       name="name"
-    //       pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-    //       title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-    //       required
-    //       value={name}
-    //       onChange={onNameInput}
-    //     />
-    //   </label>
-    //   <label className={style.label}>
-    //     Number
-    //       <input className={style.input}
-    //       type="tel"
-    //       name="number"
-    //       pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-    //       title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-    //       required
-    //       value={number}
-    //       onChange={onNumberInput}
-    //     />
-    //   </label>
-
-    //   <button type="submit" className={s.button}>Add contact</button>
-    // </form>
+    // <ContactForm onSubmit={onFormSubmit}
+    //   onNameInput={onNameInput} onNumberInput={onNumberInput}
+    // name={name} number={number} text="Add contact"></ContactForm>
+    <div className={style.box__formPosition}>
+    <form onSubmit={onFormSubmit} >
+      
+      <div className={style.label_position}> 
+      <input
+          className={style.input}
+          type="text"
+          name="name"
+          id="name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required
+          value={name}
+          onChange={onNameInput}
+          placeholder="name@example.com"
+        />
+        <label
+          className={style.label}
+        htmlFor="name">
+        Name
+        </label>
+      </div> 
+      <div className={style.label_position}> 
+          <input className={style.input}
+          type="tel"
+          name="number"
+          id="email"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+          value={number}
+          onChange={onNumberInput}
+          placeholder="name@example.com"
+        />
+        <label
+          className={style.label}
+          htmlFor="email">
+        Number
+      </label>
+</div> 
+      <button type="submit" className={s.button}>Add contact</button>
+      </form>
+      </div>
   );
 }
 
