@@ -1,29 +1,28 @@
 import { useEffect } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { authOperation, authSelectors } from 'redux/auth';
+import { authOperation } from 'redux/auth';
 import PublicRoute from '../helpers/PublicRoute';
 import PrivateRoute from '../helpers/PrivateRoute';
-// import { Contacts, LoginView, RegisterView } from 'views';
+
 import style from './СommonStyle/CommoneStyle.module.css';
 import ContactsView from '../views/ContactsView/ContactsView';
-// import LoginView from '../views/LoginView/LoginView';
-// import RegisterView from '../views/RegisterView/RegisterView';
+
 import AppBar from './AppBar/AppBar';
 import Home from './Home/Home';
-import PageNotFound from '../views/NotFoundView/NotFoundView';
+
 const LoginView = lazy(() => import('../views/LoginView/LoginView.js'));
 const RegisterView = lazy(() => import('../views/RegisterView/RegisterView'));
 // const ContactsView = lazy(() => import('../views/ContactsView/ContactsView'));
 const NotFoundView = lazy(() => import('../views/NotFoundView/NotFoundView'));
 
-// import Navigation from '../components/Navigation/Navigation';
+
 
 
 export default function App () {
   const dispatch = useDispatch();
-  const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+  // const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
   useEffect(() => {
   dispatch(authOperation.fetchCurrentUser())
