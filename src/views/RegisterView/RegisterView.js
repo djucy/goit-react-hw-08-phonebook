@@ -4,6 +4,9 @@ import { authOperation } from 'redux/auth';
 // import { TextField } from "@mui/material";
 // import { Navigate } from "react-router-dom";
 import style from '../../components/СommonStyle/CommoneStyle.module.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 
 export default function RegisterView() {
     const [name, setName] = useState('');
@@ -26,12 +29,15 @@ export default function RegisterView() {
     }
     const handleSubmit = e => {
         e.preventDefault();
+        if (!name || !email || !password) {
+             return toast.error('Please, enter name, email and password!',{
+                theme: 'colored',
+            });
+        }
         dispatch(authOperation.register({ name, email, password }));
-
         setName('');
         setEmail('');
         setPassord('');
-        // return <Navigate to="/login"/>
 
     }
 

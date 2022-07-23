@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { authOperation } from 'redux/auth';
 import s from '../../components/СommonStyle/CommoneStyle.module.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 
 
 export default function LoginView() {
@@ -22,6 +25,11 @@ export default function LoginView() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!email || !password) {
+            return toast.error('Please, enter email and password!',{
+                theme: 'colored',
+            });
+        }
         dispatch(authOperation.logIn({ email, password }));
         setEmail('');
         setPassword('');

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { authOperation } from 'redux/auth';
 import PublicRoute from '../helpers/PublicRoute';
 import PrivateRoute from '../helpers/PrivateRoute';
@@ -47,7 +48,7 @@ export default function App () {
         <Route path="*" element={<NotFoundView/> }></Route>
          
             </Routes>
-            
+            < ToastContainer/>
           </>
       {/* ) }  */}
       </Suspense>
