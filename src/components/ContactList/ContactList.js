@@ -27,8 +27,8 @@ const ContactList = () => {
   // }
 
   return (
-
-    <table className={s.table}>
+    <>
+      {contacts.length === 0 ? (<h2 className={s.title}>Contacts not yet added</h2>) :(<table className={s.table}>
       <thead>
         <tr>
           <th className={s.item}>Name</th>
@@ -49,8 +49,11 @@ const ContactList = () => {
           </tr>
         ))}
       </tbody>
-    </table>
-
+      </table>)
+      }
+    
+      
+</>
   )
 };
 
