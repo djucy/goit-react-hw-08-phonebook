@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Modal from '../Modal/Modal'
 // import s from '../ContactForm/ContactForm.module.css'
 import style from '../СommonStyle/CommoneStyle.module.css';
-
+import PropTypes from 'prop-types';
 
 export default function ContactEdit({contactName,contactNumber, id}) {
     const dispatch = useDispatch()
@@ -78,4 +78,13 @@ const onNameInput = e => {
     </>
       );
      
+}
+
+ContactEdit.propTypes = {
+  
+      contactName: PropTypes.string.isRequired,
+      contactNumber: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    
+
 }

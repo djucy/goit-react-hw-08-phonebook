@@ -9,19 +9,7 @@ import s from '../../components/СommonStyle/CommoneStyle.module.css';
 
 
 export default function Contacts() {
-//   const [name, setName] = useState('')
-//   const [number, setNumber] = useState('')
-//   const [id,setId]=useState('')
-//  const [isModalOpen, setIsModalOpen]   = useState(false);
-  // const toggleModal = () => { setIsModalOpen(state => !state) }
-  
-  // const onEditContact = ({ name, number, id }) => {
-   
-  //   setName(name);
-  //   setNumber(number);
-  //   setId(id);
-  //   toggleModal();
-  // }
+
 
     return (
        <div >
@@ -31,9 +19,7 @@ export default function Contacts() {
         <h2 className={s.title__secondary}>Contacts</h2>
         <Filter />
           <ContactList />
-          {/* {isModalOpen && (<Modal onClose={toggleModal} >
-            <ContactEdit name={name} number={number} id={id}></ContactEdit>
-          </Modal>)} */}
+         
       </div>
     </div>
     )
